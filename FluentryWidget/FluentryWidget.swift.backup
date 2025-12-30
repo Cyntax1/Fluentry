@@ -1,0 +1,424 @@
+//
+//  FluentryWidget.swift
+//  FluentryWidget
+//
+//  Created by Rishith Chennupati on 11/9/25.
+//
+
+import WidgetKit
+import SwiftUI
+import AppIntents
+
+// MARK: - Widget Configuration Intent
+struct WidgetStyleIntent: WidgetConfigurationIntent {
+    static var title: LocalizedStringResource = "Widget Style"
+    static var description = IntentDescription("Choose your widget style")
+    
+    @Parameter(title: "Show Streak", default: true)
+    var showStreak: Bool
+    
+    @Parameter(title: "Show Stats", default: true)
+    var showStats: Bool
+}
+
+// MARK: - Widget Timeline Entry
+struct FluentryWidgetEntry: TimelineEntry {
+    let date: Date
+    let streak: Int
+    let todayPoints: Int
+    let totalWords: Int
+    let lessonsCompleted: Int
+    let wordOfTheDay: WordOfDay?
+    let configuration: WidgetStyleIntent
+}
+
+// MARK: - Word of the Day Model
+struct WordOfDay: Codable {
+    let word: String
+    let definition: String
+    let example: String
+    let pronunciation: String
+}
+
+// MARK: - Widget Timeline Provider
+struct FluentryWidgetProvider: AppIntentTimelineProvider {
+    // App Group identifier - MUST MATCH WidgetDataManager
+    private let appGroupID = "group.com.fluentry.app"
+    
+    private var userDefaults: UserDefaults? {
+        UserDefaults(suiteName: appGroupID)
+    }
+    
+    func placeholder(in context: Context) -> FluentryWidgetEntry {
+        FluentryWidgetEntry(
+            date: Date(),
+            streak: 7,
+            todayPoints: 120,
+            totalWords: 150,
+            lessonsCompleted: 5,
+            wordOfTheDay: WordOfDay(
+                word: "Serendipity",
+                definition: "The occurrence of events by chance in a happy way",
+                example: "Finding this park was pure serendipity.",
+                pronunciation: "/ˌserənˈdɪpɪti/"
+            ),
+            configuration: WidgetStyleIntent()
+        )
+    }
+    
+    func snapshot(for configuration: WidgetStyleIntent, in context: Context) async -> FluentryWidgetEntry {
+        loadCurrentData(configuration: configuration)
+    }
+    
+    func timeline(for configuration: WidgetStyleIntent, in context: Context) async -> Timeline<FluentryWidgetEntry> {
+        let currentDate = Date()
+        let entry = loadCurrentData(configuration: configuration)
+        
+        // Update every hour
+        let nextUpdate = Calendar.current.date(byAdding: .hour, value: 1, to: currentDate)!
+        return Timeline(entries: [entry], policy: .after(nextUpdate))
+    }
+    
+    // MARK: - Load Real Data
+    
+    private func loadCurrentData(configuration: WidgetStyleIntent) -> FluentryWidgetEntry {
+        let streak = userDefaults?.integer(forKey: "widget_streak") ?? 0
+        let todayPoints = userDefaults?.integer(forKey: "widget_todayPoints") ?? 0
+        let totalWords = userDefaults?.integer(forKey: "widget_totalWords") ?? 0
+        let lessonsCompleted = userDefaults?.integer(forKey: "widget_lessonsCompleted") ?? 0
+        let wordData = userDefaults?.data(forKey: "widget_wordOfTheDay")
+        
+        var wordOfTheDay: WordOfDay?
+        if let data = wordData {
+            wordOfTheDay = try? JSONDecoder().decode(WordOfDay.self, from: data)
+        }
+        
+        return FluentryWidgetEntry(
+            date: Date(),
+            streak: streak,
+            todayPoints: todayPoints,
+            totalWords: totalWords,
+            lessonsCompleted: lessonsCompleted,
+            wordOfTheDay: wordOfTheDay,
+            configuration: configuration
+        )
+    }
+}
+
+// MARK: - Small Widget View (Streak Focus)
+struct SmallWidgetView: View {
+    let entry: FluentryWidgetEntry
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            Spacer()
+            
+            VStack(spacing: 4) {
+                Image(systemName: "flame.fill")
+                    .font(.system(size: 32, weight: .medium))
+                    .foregroundStyle(.orange)
+                    .symbolEffect(.pulse, options: .repeating)
+                
+                Text("\(entry.streak)")
+                    .font(.system(size: 40, weight: .bold, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .contentTransition(.numericText())
+                
+                Text("day streak")
+                    .font(.system(size: 11, weight: .medium))
+                    .foregroundStyle(.secondary)
+                    .textCase(.uppercase)
+                    .tracking(0.5)
+            }
+            
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
+
+// MARK: - Medium Widget View (Stats Overview)
+struct MediumWidgetView: View {
+    let entry: FluentryWidgetEntry
+    
+    var body: some View {
+        HStack(spacing: 16) {
+            // Streak section
+            if entry.configuration.showStreak {
+                VStack(spacing: 6) {
+                    Image(systemName: "flame.fill")
+                        .font(.system(size: 28, weight: .medium))
+                        .foregroundStyle(.orange)
+                        .symbolEffect(.pulse, options: .repeating)
+                    
+                    Text("\(entry.streak)")
+                        .font(.system(size: 32, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                        .contentTransition(.numericText())
+                    
+                    Text("day streak")
+                        .font(.system(size: 9, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                        .textCase(.uppercase)
+                        .tracking(0.4)
+                }
+                .frame(maxWidth: .infinity)
+            }
+            
+            // Stats section
+            if entry.configuration.showStats {
+                VStack(alignment: .leading, spacing: 12) {
+                    StatRow(
+                        icon: "star.fill",
+                        value: "\(entry.todayPoints)",
+                        label: "points",
+                        color: .blue
+                    )
+                    
+                    StatRow(
+                        icon: "book.fill",
+                        value: "\(entry.lessonsCompleted)",
+                        label: "lessons",
+                        color: .purple
+                    )
+                    
+                    StatRow(
+                        icon: "character.book.closed.fill",
+                        value: "\(entry.totalWords)",
+                        label: "words",
+                        color: .green
+                    )
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .padding(16)
+    }
+}
+
+// MARK: - Stat Row Component
+struct StatRow: View {
+    let icon: String
+    let value: String
+    let label: String
+    let color: Color
+    
+    var body: some View {
+        HStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(color)
+                .frame(width: 20)
+            
+            Text(value)
+                .font(.system(size: 17, weight: .semibold, design: .rounded))
+                .foregroundStyle(.primary)
+                .contentTransition(.numericText())
+            
+            Text(label)
+                .font(.system(size: 13, weight: .medium))
+                .foregroundStyle(.secondary)
+        }
+    }
+}
+
+// MARK: - Large Widget View (Detailed Stats)
+struct LargeWidgetView: View {
+    let entry: FluentryWidgetEntry
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            // Header
+            HStack(spacing: 8) {
+                Image(systemName: "graduationcap.fill")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundStyle(.blue)
+                
+                Text("Your Progress")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundStyle(.primary)
+                
+                Spacer()
+                
+                Text(entry.date, style: .time)
+                    .font(.system(size: 11, weight: .medium))
+                    .foregroundStyle(.tertiary)
+            }
+            
+            // Streak highlight
+            HStack(spacing: 16) {
+                Image(systemName: "flame.fill")
+                    .font(.system(size: 36, weight: .medium))
+                    .foregroundStyle(.orange)
+                    .symbolEffect(.pulse, options: .repeating)
+                
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("\(entry.streak) day streak")
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                    
+                    Text(streakMessage)
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundStyle(.secondary)
+                }
+                
+                Spacer()
+            }
+            .padding(16)
+            .background(.blue.opacity(0.08))
+            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            
+            // Stats grid
+            HStack(spacing: 12) {
+                CompactStatCard(
+                    icon: "star.fill",
+                    value: "\(entry.todayPoints)",
+                    label: "points",
+                    color: .blue
+                )
+                
+                CompactStatCard(
+                    icon: "book.fill",
+                    value: "\(entry.lessonsCompleted)",
+                    label: "lessons",
+                    color: .purple
+                )
+            }
+            
+            HStack(spacing: 12) {
+                CompactStatCard(
+                    icon: "character.book.closed.fill",
+                    value: "\(entry.totalWords)",
+                    label: "words",
+                    color: .green
+                )
+                
+                CompactStatCard(
+                    icon: "chart.line.uptrend.xyaxis",
+                    value: "\(entry.todayPoints * 7)",
+                    label: "week pts",
+                    color: .orange
+                )
+            }
+            
+            Spacer(minLength: 0)
+        }
+        .padding(16)
+    }
+    
+    private var streakMessage: String {
+        if entry.streak == 0 {
+            return "Start your learning journey"
+        } else if entry.streak < 7 {
+            return "Keep going! 💪"
+        } else if entry.streak < 30 {
+            return "Amazing progress! 🎉"
+        } else {
+            return "Incredible dedication! 🏆"
+        }
+    }
+}
+
+// MARK: - Compact Stat Card
+struct CompactStatCard: View {
+    let icon: String
+    let value: String
+    let label: String
+    let color: Color
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Image(systemName: icon)
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundStyle(color)
+            
+            VStack(alignment: .leading, spacing: 2) {
+                Text(value)
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .contentTransition(.numericText())
+                
+                Text(label)
+                    .font(.system(size: 11, weight: .medium))
+                    .foregroundStyle(.secondary)
+                    .textCase(.uppercase)
+                    .tracking(0.3)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .background(color.opacity(0.08))
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+}
+
+// MARK: - Widget Configuration
+struct FluentryWidget: Widget {
+    let kind: String = "FluentryWidget"
+    
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: FluentryWidgetProvider()) { entry in
+            FluentryWidgetEntryView(entry: entry)
+                .containerBackground(.fill.tertiary, for: .widget)
+        }
+        .configurationDisplayName("Fluentry Stats")
+        .description("Track your English learning progress")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+    }
+}
+
+// MARK: - Widget Entry View
+struct FluentryWidgetEntryView: View {
+    @Environment(\.widgetFamily) var widgetFamily
+    let entry: FluentryWidgetEntry
+    
+    var body: some View {
+        switch widgetFamily {
+        case .systemSmall:
+            SmallWidgetView(entry: entry)
+        case .systemMedium:
+            MediumWidgetView(entry: entry)
+        case .systemLarge:
+            LargeWidgetView(entry: entry)
+        default:
+            SmallWidgetView(entry: entry)
+        }
+    }
+}
+
+// MARK: - Preview
+#Preview(as: .systemSmall) {
+    FluentryWidget()
+} timeline: {
+    FluentryWidgetEntry(
+        date: Date(),
+        streak: 7,
+        todayPoints: 120,
+        totalWords: 150,
+        lessonsCompleted: 5
+    )
+}
+
+#Preview(as: .systemMedium) {
+    FluentryWidget()
+} timeline: {
+    FluentryWidgetEntry(
+        date: Date(),
+        streak: 7,
+        todayPoints: 120,
+        totalWords: 150,
+        lessonsCompleted: 5
+    )
+}
+
+#Preview(as: .systemLarge) {
+    FluentryWidget()
+} timeline: {
+    FluentryWidgetEntry(
+        date: Date(),
+        streak: 7,
+        todayPoints: 120,
+        totalWords: 150,
+        lessonsCompleted: 5
+    )
+}

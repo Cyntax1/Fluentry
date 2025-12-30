@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluentry - Master English with AI</title>
+    <meta name="description" content="Transform your English learning with AI-powered lessons, smart vocabulary training, and interactive exercises.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #667eea;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 20px;
+        }
+        
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #667eea;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .step p {
+            color: #666;
+        }
+        
+        /* Download Section */
+        .download {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .download h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .download p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .features h2,
+            .how-it-works h2,
+            .download h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Fluentry</h1>
+            <p>Master English with AI-powered lessons, smart vocabulary training, and interactive exercises</p>
+            <a href="https://apps.apple.com/app/fluentry" class="cta-button">Download on App Store</a>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Fluentry?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>AI-Powered Learning</h3>
+                    <p>Experience personalized education with cutting-edge AI technology. Get custom lessons tailored to your level, interests, and goals.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Smart Vocabulary</h3>
+                    <p>Master thousands of words with our intelligent vocabulary system featuring spaced repetition, pronunciations, and real-world examples.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Interactive Exercises</h3>
+                    <p>Learn through fun games and challenges including multiple choice, fill in the blanks, matching pairs, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Conversation Practice</h3>
+                    <p>Build confidence by chatting with AI tutors who provide instant feedback and natural corrections.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Progress Tracking</h3>
+                    <p>Stay motivated with detailed analytics, daily streaks, achievement badges, and beautiful visualizations.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Beautiful Widgets</h3>
+                    <p>Track your progress right from your home screen with stunning widgets showing streaks, stats, and word of the day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Download & Sign Up</h3>
+                    <p>Get started in seconds with our quick onboarding process</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Take Assessment</h3>
+                    <p>Let our AI determine your current English level</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Start Learning</h3>
+                    <p>Follow your personalized curriculum and watch your skills grow</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Track Progress</h3>
+                    <p>Celebrate milestones and maintain your daily streak</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section class="download">
+        <div class="container">
+            <h2>Start Your Fluency Journey Today</h2>
+            <p>Join thousands of learners improving their English with Fluentry</p>
+            <a href="https://apps.apple.com/app/fluentry" class="cta-button">Download Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fluentry. All rights reserved.</p>
+            <p>
+                <a href="/support">Support</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="mailto:zenfasthelp@gmail.com">Contact</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

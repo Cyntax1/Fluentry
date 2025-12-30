@@ -1,0 +1,790 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCAC179F2EC15AC700F73361 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAC179E2EC15AC700F73361 /* WidgetKit.framework */; };
+		BCAC17A12EC15AC700F73361 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAC17A02EC15AC700F73361 /* SwiftUI.framework */; };
+		BCAC17B02EC15ACA00F73361 /* FluentryWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BCAC179C2EC15AC600F73361 /* FluentryWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BCAC17BF2EC15FDF00F73361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCAC17B92EC15FDF00F73361 /* Assets.xcassets */; };
+		BCAC17C12EC15FDF00F73361 /* FluentryWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC17BC2EC15FDF00F73361 /* FluentryWidgetBundle.swift */; };
+		BCAC17C22EC15FDF00F73361 /* FluentryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC17BB2EC15FDF00F73361 /* FluentryWidget.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC5210EB2DE3CA16006973BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5210D12DE3CA14006973BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC5210D82DE3CA14006973BA;
+			remoteInfo = Fluentry;
+		};
+		BC5210F52DE3CA16006973BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5210D12DE3CA14006973BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC5210D82DE3CA14006973BA;
+			remoteInfo = Fluentry;
+		};
+		BCAC17AE2EC15ACA00F73361 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5210D12DE3CA14006973BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCAC179B2EC15AC600F73361;
+			remoteInfo = FluentryWidgetExtension;
+		};
+		BCAC17B72EC15E5F00F73361 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC5210D12DE3CA14006973BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCAC179B2EC15AC600F73361;
+			remoteInfo = FluentryWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BCAC17B52EC15ACA00F73361 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BCAC17B02EC15ACA00F73361 /* FluentryWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BC5210D92DE3CA14006973BA /* Fluentry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluentry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC5210EA2DE3CA16006973BA /* FluentryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluentryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC5210F42DE3CA16006973BA /* FluentryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluentryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCAC179C2EC15AC600F73361 /* FluentryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FluentryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCAC179E2EC15AC700F73361 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		BCAC17A02EC15AC700F73361 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		BCAC17B92EC15FDF00F73361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCAC17BA2EC15FDF00F73361 /* FluentryWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FluentryWidget.entitlements; sourceTree = "<group>"; };
+		BCAC17BB2EC15FDF00F73361 /* FluentryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentryWidget.swift; sourceTree = "<group>"; };
+		BCAC17BC2EC15FDF00F73361 /* FluentryWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentryWidgetBundle.swift; sourceTree = "<group>"; };
+		BCAC17BD2EC15FDF00F73361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BC5210FC2DE3CA16006973BA /* Exceptions for "Fluentry" folder in "Fluentry" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BC5210D82DE3CA14006973BA /* Fluentry */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BC5210DB2DE3CA14006973BA /* Fluentry */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BC5210FC2DE3CA16006973BA /* Exceptions for "Fluentry" folder in "Fluentry" target */,
+			);
+			path = Fluentry;
+			sourceTree = "<group>";
+		};
+		BC5210ED2DE3CA16006973BA /* FluentryTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FluentryTests;
+			sourceTree = "<group>";
+		};
+		BC5210F72DE3CA16006973BA /* FluentryUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FluentryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC5210D62DE3CA14006973BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC5210E72DE3CA16006973BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC5210F12DE3CA16006973BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCAC17992EC15AC600F73361 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCAC17A12EC15AC700F73361 /* SwiftUI.framework in Frameworks */,
+				BCAC179F2EC15AC700F73361 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC5210D02DE3CA14006973BA = {
+			isa = PBXGroup;
+			children = (
+				BCAC17BE2EC15FDF00F73361 /* FluentryWidget */,
+				BC5210DB2DE3CA14006973BA /* Fluentry */,
+				BC5210ED2DE3CA16006973BA /* FluentryTests */,
+				BC5210F72DE3CA16006973BA /* FluentryUITests */,
+				BCAC179D2EC15AC700F73361 /* Frameworks */,
+				BC5210DA2DE3CA14006973BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC5210DA2DE3CA14006973BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC5210D92DE3CA14006973BA /* Fluentry.app */,
+				BC5210EA2DE3CA16006973BA /* FluentryTests.xctest */,
+				BC5210F42DE3CA16006973BA /* FluentryUITests.xctest */,
+				BCAC179C2EC15AC600F73361 /* FluentryWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCAC179D2EC15AC700F73361 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCAC179E2EC15AC700F73361 /* WidgetKit.framework */,
+				BCAC17A02EC15AC700F73361 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCAC17BE2EC15FDF00F73361 /* FluentryWidget */ = {
+			isa = PBXGroup;
+			children = (
+				BCAC17B92EC15FDF00F73361 /* Assets.xcassets */,
+				BCAC17BA2EC15FDF00F73361 /* FluentryWidget.entitlements */,
+				BCAC17BB2EC15FDF00F73361 /* FluentryWidget.swift */,
+				BCAC17BC2EC15FDF00F73361 /* FluentryWidgetBundle.swift */,
+				BCAC17BD2EC15FDF00F73361 /* Info.plist */,
+			);
+			path = FluentryWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC5210D82DE3CA14006973BA /* Fluentry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC5210FD2DE3CA16006973BA /* Build configuration list for PBXNativeTarget "Fluentry" */;
+			buildPhases = (
+				BC5210D52DE3CA14006973BA /* Sources */,
+				BC5210D62DE3CA14006973BA /* Frameworks */,
+				BC5210D72DE3CA14006973BA /* Resources */,
+				BCAC17B52EC15ACA00F73361 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCAC17AF2EC15ACA00F73361 /* PBXTargetDependency */,
+				BCAC17B82EC15E5F00F73361 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BC5210DB2DE3CA14006973BA /* Fluentry */,
+			);
+			name = Fluentry;
+			packageProductDependencies = (
+			);
+			productName = Fluentry;
+			productReference = BC5210D92DE3CA14006973BA /* Fluentry.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC5210E92DE3CA16006973BA /* FluentryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC5211022DE3CA16006973BA /* Build configuration list for PBXNativeTarget "FluentryTests" */;
+			buildPhases = (
+				BC5210E62DE3CA16006973BA /* Sources */,
+				BC5210E72DE3CA16006973BA /* Frameworks */,
+				BC5210E82DE3CA16006973BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC5210EC2DE3CA16006973BA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BC5210ED2DE3CA16006973BA /* FluentryTests */,
+			);
+			name = FluentryTests;
+			packageProductDependencies = (
+			);
+			productName = FluentryTests;
+			productReference = BC5210EA2DE3CA16006973BA /* FluentryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BC5210F32DE3CA16006973BA /* FluentryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC5211052DE3CA16006973BA /* Build configuration list for PBXNativeTarget "FluentryUITests" */;
+			buildPhases = (
+				BC5210F02DE3CA16006973BA /* Sources */,
+				BC5210F12DE3CA16006973BA /* Frameworks */,
+				BC5210F22DE3CA16006973BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC5210F62DE3CA16006973BA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BC5210F72DE3CA16006973BA /* FluentryUITests */,
+			);
+			name = FluentryUITests;
+			packageProductDependencies = (
+			);
+			productName = FluentryUITests;
+			productReference = BC5210F42DE3CA16006973BA /* FluentryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BCAC179B2EC15AC600F73361 /* FluentryWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCAC17B12EC15ACA00F73361 /* Build configuration list for PBXNativeTarget "FluentryWidgetExtension" */;
+			buildPhases = (
+				BCAC17982EC15AC600F73361 /* Sources */,
+				BCAC17992EC15AC600F73361 /* Frameworks */,
+				BCAC179A2EC15AC600F73361 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FluentryWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = FluentryWidgetExtension;
+			productReference = BCAC179C2EC15AC600F73361 /* FluentryWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC5210D12DE3CA14006973BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2610;
+				LastUpgradeCheck = 2610;
+				TargetAttributes = {
+					BC5210D82DE3CA14006973BA = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					BC5210E92DE3CA16006973BA = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = BC5210D82DE3CA14006973BA;
+					};
+					BC5210F32DE3CA16006973BA = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = BC5210D82DE3CA14006973BA;
+					};
+					BCAC179B2EC15AC600F73361 = {
+						CreatedOnToolsVersion = 26.1;
+					};
+				};
+			};
+			buildConfigurationList = BC5210D42DE3CA14006973BA /* Build configuration list for PBXProject "Fluentry" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC5210D02DE3CA14006973BA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BC5210DA2DE3CA14006973BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC5210D82DE3CA14006973BA /* Fluentry */,
+				BC5210E92DE3CA16006973BA /* FluentryTests */,
+				BC5210F32DE3CA16006973BA /* FluentryUITests */,
+				BCAC179B2EC15AC600F73361 /* FluentryWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC5210D72DE3CA14006973BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC5210E82DE3CA16006973BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC5210F22DE3CA16006973BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCAC179A2EC15AC600F73361 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCAC17BF2EC15FDF00F73361 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC5210D52DE3CA14006973BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC5210E62DE3CA16006973BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC5210F02DE3CA16006973BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCAC17982EC15AC600F73361 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCAC17C12EC15FDF00F73361 /* FluentryWidgetBundle.swift in Sources */,
+				BCAC17C22EC15FDF00F73361 /* FluentryWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC5210EC2DE3CA16006973BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC5210D82DE3CA14006973BA /* Fluentry */;
+			targetProxy = BC5210EB2DE3CA16006973BA /* PBXContainerItemProxy */;
+		};
+		BC5210F62DE3CA16006973BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC5210D82DE3CA14006973BA /* Fluentry */;
+			targetProxy = BC5210F52DE3CA16006973BA /* PBXContainerItemProxy */;
+		};
+		BCAC17AF2EC15ACA00F73361 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCAC179B2EC15AC600F73361 /* FluentryWidgetExtension */;
+			targetProxy = BCAC17AE2EC15ACA00F73361 /* PBXContainerItemProxy */;
+		};
+		BCAC17B82EC15E5F00F73361 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCAC179B2EC15AC600F73361 /* FluentryWidgetExtension */;
+			targetProxy = BCAC17B72EC15E5F00F73361 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BC5210FE2DE3CA16006973BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Fluentry/Fluentry.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MP9LDJ552;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fluentry/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = cloud.notrai.Fluentry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC5210FF2DE3CA16006973BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Fluentry/Fluentry.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MP9LDJ552;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fluentry/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = cloud.notrai.Fluentry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC5211002DE3CA16006973BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "Rishith Chennupati";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC5211012DE3CA16006973BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "Rishith Chennupati";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC5211032DE3CA16006973BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MP9LDJ552;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = cloud.notrai.FluentryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fluentry.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fluentry";
+			};
+			name = Debug;
+		};
+		BC5211042DE3CA16006973BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MP9LDJ552;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = cloud.notrai.FluentryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fluentry.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fluentry";
+			};
+			name = Release;
+		};
+		BC5211062DE3CA16006973BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MP9LDJ552;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = cloud.notrai.FluentryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fluentry;
+			};
+			name = Debug;
+		};
+		BC5211072DE3CA16006973BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MP9LDJ552;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = cloud.notrai.FluentryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fluentry;
+			};
+			name = Release;
+		};
+		BCAC17B22EC15ACA00F73361 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = FluentryWidget/FluentryWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MP9LDJ552;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FluentryWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FluentryWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = cloud.notrai.Fluentry.FluentryWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCAC17B32EC15ACA00F73361 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = FluentryWidget/FluentryWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MP9LDJ552;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FluentryWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FluentryWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = cloud.notrai.Fluentry.FluentryWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC5210D42DE3CA14006973BA /* Build configuration list for PBXProject "Fluentry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC5211002DE3CA16006973BA /* Debug */,
+				BC5211012DE3CA16006973BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC5210FD2DE3CA16006973BA /* Build configuration list for PBXNativeTarget "Fluentry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC5210FE2DE3CA16006973BA /* Debug */,
+				BC5210FF2DE3CA16006973BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC5211022DE3CA16006973BA /* Build configuration list for PBXNativeTarget "FluentryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC5211032DE3CA16006973BA /* Debug */,
+				BC5211042DE3CA16006973BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC5211052DE3CA16006973BA /* Build configuration list for PBXNativeTarget "FluentryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC5211062DE3CA16006973BA /* Debug */,
+				BC5211072DE3CA16006973BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCAC17B12EC15ACA00F73361 /* Build configuration list for PBXNativeTarget "FluentryWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCAC17B22EC15ACA00F73361 /* Debug */,
+				BCAC17B32EC15ACA00F73361 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC5210D12DE3CA14006973BA /* Project object */;
+}
